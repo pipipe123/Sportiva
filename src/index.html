@@ -4,51 +4,181 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sportiva | Gestión de gimnasios</title>
+  <style>
+    :root {
+      --negro: #0f172a;
+      --gris: #1e293b;
+      --naranja: #f97316;
+      --naranja-oscuro: #ea580c;
+      --claro: #f8fafc;
+      --texto: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", Arial, sans-serif; color: var(--texto); background: var(--claro); line-height: 1.6; }
+    .contenedor { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navegación */
+    nav { background: var(--negro); position: sticky; top: 0; z-index: 10; }
+    nav .contenedor { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .logo { color: #fff; font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; }
+    .logo span { color: var(--naranja); }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav a { color: #cbd5e1; text-decoration: none; font-weight: 500; }
+    nav a:hover { color: var(--naranja); }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, var(--negro) 0%, var(--gris) 100%); color: #fff; padding: 80px 0; }
+    .hero .contenedor { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+    .hero h1 { font-size: 2.8rem; line-height: 1.15; margin-bottom: 16px; }
+    .hero h1 span { color: var(--naranja); }
+    .hero p { color: #cbd5e1; font-size: 1.1rem; margin-bottom: 14px; }
+    .hero .invitacion { color: #fff; font-weight: 600; }
+    .boton { display: inline-block; margin-top: 18px; background: var(--naranja); color: #fff; padding: 14px 32px; border-radius: 999px; font-weight: 700; font-size: 1.05rem; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 8px 20px rgba(249, 115, 22, .35); transition: background .2s, transform .2s; }
+    .boton:hover { background: var(--naranja-oscuro); transform: translateY(-2px); }
+    .boton.secundario { background: transparent; border: 2px solid var(--naranja); box-shadow: none; margin-left: 10px; }
+    .banner svg { width: 100%; height: auto; border-radius: 16px; }
+
+    /* Secciones */
+    section { padding: 70px 0; }
+    .titulo-seccion { text-align: center; font-size: 2rem; color: var(--negro); margin-bottom: 12px; }
+    .subtitulo { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+
+    .beneficios { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .tarjeta { background: #fff; border-radius: 14px; padding: 28px 22px; box-shadow: 0 4px 18px rgba(15, 23, 42, .08); border-top: 4px solid var(--naranja); }
+    .tarjeta .icono { font-size: 2rem; margin-bottom: 10px; }
+    .tarjeta h3 { color: var(--negro); margin-bottom: 8px; font-size: 1.1rem; }
+
+    /* Llamado a la acción */
+    .cta { background: var(--naranja); color: #fff; text-align: center; padding: 60px 0; }
+    .cta h2 { font-size: 2rem; margin-bottom: 10px; }
+    .cta .boton { background: var(--negro); box-shadow: none; }
+    .cta .boton:hover { background: var(--gris); }
+
+    /* Contacto */
+    .contacto { background: #fff; }
+    .datos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+    .dato { padding: 24px; border-radius: 14px; background: var(--claro); }
+    .dato strong { display: block; color: var(--negro); margin-bottom: 4px; }
+
+    footer { background: var(--negro); color: #94a3b8; text-align: center; padding: 22px 0; font-size: .9rem; }
+
+    @media (max-width: 860px) {
+      .hero .contenedor { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.1rem; }
+      .beneficios { grid-template-columns: repeat(2, 1fr); }
+      .datos { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+    }
+    @media (max-width: 520px) {
+      .beneficios { grid-template-columns: 1fr; }
+      .boton.secundario { margin-left: 0; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Sportiva</h1>
-    <h2>Tu gimnasio en orden, sin complicaciones.</h2>
+  <nav>
+    <div class="contenedor">
+      <div class="logo">SPORT<span>IVA</span></div>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="contenedor">
+      <div>
+        <h1>Tu gimnasio en orden, <span>sin complicaciones.</span></h1>
+        <p>
+          Sportiva es un sistema de gestión para gimnasios que te permite controlar
+          socios, membresías, pagos y asistencias desde un solo lugar.
+          Se instala con un simple archivo .exe y funciona en cualquier computadora,
+          sin necesidad de equipos costosos ni conocimientos técnicos.
+        </p>
+        <p class="invitacion">¡Deja atrás las libretas y las hojas de cálculo! Descubre cómo Sportiva puede ayudarte a administrar tu gimnasio hoy mismo.</p>
+        <a href="#beneficios" class="boton">Conoce más</a>
+        <a href="#contacto" class="boton secundario">Comienza ahora</a>
+      </div>
+
+      <div class="banner">
+        <svg viewBox="0 0 500 340" role="img" aria-label="Banner de Sportiva">
+          <rect width="500" height="340" fill="#1e293b"/>
+          <circle cx="400" cy="70" r="110" fill="#f97316" opacity=".15"/>
+          <circle cx="90" cy="300" r="90" fill="#f97316" opacity=".1"/>
+          <!-- Mancuerna -->
+          <rect x="150" y="105" width="200" height="26" rx="6" fill="#f97316"/>
+          <rect x="110" y="70" width="40" height="96" rx="8" fill="#e2e8f0"/>
+          <rect x="80" y="85" width="30" height="66" rx="8" fill="#cbd5e1"/>
+          <rect x="350" y="70" width="40" height="96" rx="8" fill="#e2e8f0"/>
+          <rect x="390" y="85" width="30" height="66" rx="8" fill="#cbd5e1"/>
+          <text x="250" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="#ffffff">SPORTIVA</text>
+          <text x="250" y="280" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#f97316">Gestión de gimnasios fácil y rápida</text>
+        </svg>
+      </div>
+    </div>
   </header>
 
-  <!-- Banner -->
-  <svg width="100%" viewBox="0 0 900 220" role="img" aria-label="Banner de Sportiva">
-    <rect width="900" height="220" fill="#111827"/>
-    <rect x="120" y="95" width="200" height="30" fill="#f97316"/>
-    <rect x="80" y="60" width="40" height="100" rx="6" fill="#e5e7eb"/>
-    <rect x="320" y="60" width="40" height="100" rx="6" fill="#e5e7eb"/>
-    <text x="420" y="110" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#ffffff">SPORTIVA</text>
-    <text x="422" y="150" font-family="Arial, sans-serif" font-size="20" fill="#f97316">Gestión de gimnasios fácil y rápida</text>
-  </svg>
-
   <main>
-    <section>
-      <p>
-        Sportiva es un sistema de gestión para gimnasios que te permite controlar
-        socios, membresías, pagos y asistencias desde un solo lugar.
-        Se instala con un simple archivo .exe y funciona en cualquier computadora,
-        sin necesidad de equipos costosos ni conocimientos técnicos.
-      </p>
-      <p><strong>¡Deja atrás las libretas y las hojas de cálculo! Descubre cómo Sportiva puede ayudarte a administrar tu gimnasio hoy mismo.</strong></p>
+    <section id="beneficios">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">¿Por qué usar Sportiva?</h2>
+        <p class="subtitulo">
+          Administrar un gimnasio implica mucho más que abrir las puertas: hay que
+          saber quién está al corriente con sus pagos, qué membresías están por
+          vencer y cuántas personas asisten cada día. Sportiva automatiza estas
+          tareas para que dediques tu tiempo a lo más importante: tus socios.
+        </p>
+
+        <div class="beneficios">
+          <div class="tarjeta">
+            <div class="icono">💾</div>
+            <h3>Instalación sencilla</h3>
+            <p>Un solo archivo .exe y listo, sin servidores ni configuraciones complicadas.</p>
+          </div>
+          <div class="tarjeta">
+            <div class="icono">💻</div>
+            <h3>Funciona en cualquier PC</h3>
+            <p>Ligero y rápido, incluso en equipos de bajos recursos y sin internet.</p>
+          </div>
+          <div class="tarjeta">
+            <div class="icono">💳</div>
+            <h3>Membresías y pagos</h3>
+            <p>Identifica al instante qué socios tienen pagos pendientes o membresías por vencer.</p>
+          </div>
+          <div class="tarjeta">
+            <div class="icono">📊</div>
+            <h3>Control de asistencias</h3>
+            <p>Conoce cuántos socios entrenan cada día y en qué horarios hay más afluencia.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>¿Por qué usar Sportiva?</h2>
-      <p>
-        Administrar un gimnasio implica mucho más que abrir las puertas: hay que
-        saber quién está al corriente con sus pagos, qué membresías están por
-        vencer y cuántas personas asisten cada día. Sportiva automatiza estas
-        tareas para que dediques tu tiempo a lo más importante: tus socios.
-      </p>
+    <div class="cta">
+      <div class="contenedor">
+        <h2>¿Listo para modernizar tu gimnasio?</h2>
+        <p>Empieza a administrar socios, pagos y asistencias en minutos.</p>
+        <a href="#contacto" class="boton">Comienza ahora</a>
+      </div>
+    </div>
 
-      <h3>Beneficios</h3>
-      <ul>
-        <li><strong>Instalación sencilla:</strong> un solo archivo .exe y listo, sin servidores ni configuraciones complicadas.</li>
-        <li><strong>Funciona en cualquier computadora:</strong> ligero y rápido, incluso en equipos de bajos recursos y sin internet.</li>
-        <li><strong>Control de membresías y pagos:</strong> identifica al instante qué socios tienen pagos pendientes o membresías por vencer.</li>
-        <li><strong>Registro de asistencias:</strong> conoce cuántos socios entrenan cada día y en qué horarios hay más afluencia.</li>
-      </ul>
+    <section class="contacto" id="contacto">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">Contacto</h2>
+        <p class="subtitulo">¿Tienes dudas o quieres una demostración? Escríbenos.</p>
+        <div class="datos">
+          <div class="dato"><strong>📧 Correo</strong>contacto@sportiva-ejemplo.com</div>
+          <div class="dato"><strong>📞 Teléfono</strong>(618) 123 4567</div>
+          <div class="dato"><strong>📍 Dirección</strong>Av. Deportiva #100, Durango, Dgo.</div>
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer>
+    © 2026 Sportiva · Sistema de gestión de gimnasios · Información de contacto ficticia
+  </footer>
 </body>
 </html>
