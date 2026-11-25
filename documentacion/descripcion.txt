@@ -1,0 +1,21 @@
+Nombre del proyecto:
+Sportiva
+
+Problema:
+Muchos gimnasios pequeños y medianos llevan el control de sus socios, pagos y
+asistencias en libretas u hojas de cálculo. Esto provoca errores, pagos
+vencidos sin detectar, pérdida de información y mucho tiempo invertido en
+tareas administrativas. Además, la mayoría de los sistemas comerciales son
+caros, requieren internet permanente o equipos potentes.
+
+Objetivo:
+Desarrollar un sistema de gestión de gimnasio sencillo, que se instale con un
+archivo .exe y funcione en cualquier computadora, para que el personal pueda
+administrar socios, membresías, pagos y asistencias de forma rápida y confiable.
+
+Descripción:
+Sportiva es una aplicación de escritorio para la administración de gimnasios.
+Permite registrar socios, asignar y renovar membresías, registrar pagos,
+controlar la asistencia diaria y consultar qué membresías están por vencer.
+Se instala fácilmente mediante un instalador .exe, no requiere conocimientos
+técnicos y está pensada para funcionar incluso en equipos de bajos recursos.
